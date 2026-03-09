@@ -43,15 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void renderizaAlumnos() {
-        if (indice >= nombres[indiceGrupo][indice].length()) {
+        if (indice >= nombres[indiceGrupo].length) {
             indice = 0;
         }
-        indice += 1;
         miTexto.setText(nombres[indiceGrupo][indice]);
     }
 
     private void renderizaGrupo() {
-        if (indice >= nombres[indiceGrupo][indice].length()) {
+        if (indice >= nombres[indiceGrupo].length) {
             indiceGrupo += 1;
         }
         miGrupo.setText(grupos[indiceGrupo]);
@@ -59,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        renderizaAlumnos();
         renderizaGrupo();
+        renderizaAlumnos();
+        indice += 1;
     }
 }
