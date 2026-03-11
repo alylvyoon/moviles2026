@@ -51,15 +51,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void renderizaGrupo() {
         if (indice >= nombres[indiceGrupo].length) {
-            indiceGrupo += 1;
+            indiceGrupo = 0;
+            indiceGrupo++;
+            
+            if(indiceGrupo >= grupos.length){
+                indiceGrupo = 0;
+            }
         }
         miGrupo.setText(grupos[indiceGrupo]);
     }
 
     @Override
     public void onClick(View v) {
+        indice++;
         renderizaGrupo();
         renderizaAlumnos();
-        indice += 1;
     }
 }
