@@ -3,9 +3,9 @@ package com.example.calculadora;
 public class Operacion {
     Double x;
     Double y;
-    com.example.calculadora.OperationType type;
+    OperationType type;
 
-    public Operacion(Double x, Double y, com.example.calculadora.OperationType type) {
+    public Operacion(Double x, Double y, OperationType type) {
         this.x = x;
         this.y = y;
         this.type = type;
@@ -27,11 +27,11 @@ public class Operacion {
         this.y = y;
     }
 
-    public com.example.calculadora.OperationType getType() {
+    public OperationType getType() {
         return type;
     }
 
-    public void setType(com.example.calculadora.OperationType type) {
+    public void setType(OperationType type) {
         this.type = type;
     }
 }
