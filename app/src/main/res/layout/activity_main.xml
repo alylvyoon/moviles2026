@@ -39,134 +39,214 @@
         app:layout_constraintTop_toBottomOf="@+id/txvOperation" />
 
     <androidx.gridlayout.widget.GridLayout
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/txvResult"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
         app:rowCount="5">
 
         <ImageButton
             android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#000000"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:background="#333333"
             android:src="@android:drawable/ic_input_delete" />
 
         <Button
             android:id="@+id/btnAc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="AC" />
 
         <Button
             android:id="@+id/btnPercentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="%" />
 
         <Button
             android:id="@+id/btnDivide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="/" />
 
         <Button
             android:id="@+id/btnSeven"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="7" />
 
         <Button
             android:id="@+id/btnEight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="8" />
 
         <Button
             android:id="@+id/btnNine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="9" />
 
         <Button
             android:id="@+id/btnMultiple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="X" />
 
         <Button
             android:id="@+id/btnFour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="4" />
 
         <Button
             android:id="@+id/btnFive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="5" />
 
         <Button
             android:id="@+id/btnSix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="6" />
 
         <Button
             android:id="@+id/btnMinus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="-" />
 
         <Button
             android:id="@+id/btnOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="1" />
 
         <Button
             android:id="@+id/btnSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="2" />
 
         <Button
             android:id="@+id/btnThird"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="3" />
 
         <Button
             android:id="@+id/btnPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="+" />
 
         <Button
             android:id="@+id/btnPlusMinus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="+/-" />
 
         <Button
             android:id="@+id/btnCero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="0" />
 
         <Button
             android:id="@+id/btnPoint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="." />
 
         <Button
             android:id="@+id/btnEqual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/BotonCalculadora"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:minHeight="70dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
             android:text="=" />
 
     </androidx.gridlayout.widget.GridLayout>

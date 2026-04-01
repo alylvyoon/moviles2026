@@ -1,30 +1,113 @@
 package com.example.calculadora;
 
 public class ViewModel {
-    private com.example.calculadora.ICalculadora calculadora = new com.example.calculadora.Calculadora();
-    private CalculadoraBuilder builder = new CalculadoraBuilder();
-    ViewModel() {
+    private ICalculadora calculadora = new Calculadora();
 
-    }
-    Double makeOperation(Operacion [] operations) {
-        Double cache = 0.0;
-        for (Operacion operation: operations) {
-            cache += makeOperation(operation);
+    private String entradaActual = "0";
+    private String textoPantalla = "0";
+    private String textoHistorial = "";
+    private OperationType operacionPendiente = null;
+    private double resultadoActual = 0;
+    private boolean empezarNuevoNumero = true;
+
+    public void agregarDigito(String digito) {
+        if (empezarNuevoNumero) {
+            entradaActual = digito;
+            empezarNuevoNumero = false;
+        } else {
+            entradaActual += digito;
         }
-        return cache;
+        actualizarPantalla();
     }
-    Double makeOperation(Operacion operacion) {
-        switch (operacion.getType()) {
+
+    public void agregarDecimal() {
+        if (empezarNuevoNumero) {
+            entradaActual = "0.";
+            empezarNuevoNumero = false;
+        } else if (!entradaActual.contains(".")) {
+            entradaActual += ".";
+        }
+        actualizarPantalla();
+    }
+
+    public void establecerOperacion(OperationType operacion) {
+        if (operacionPendiente != null && !empezarNuevoNumero) {
+            calcularResultado();
+        }
+
+        resultadoActual = Double.parseDouble(entradaActual);
+        operacionPendiente = operacion;
+        empezarNuevoNumero = true;
+
+        actualizarHistorial(entradaActual + " " + simboloOperacion(operacion));
+    }
+
+    public void calcularResultado() {
+        if (operacionPendiente == null) return;
+
+        double valorEntrada = Double.parseDouble(entradaActual);
+        double resultado = 0;
+
+        switch (operacionPendiente) {
             case ADD:
-                return calculadora.sum(operacion.x, operacion.y);
+                resultado = calculadora.sum(resultadoActual, valorEntrada);
+                break;
             case MINUS:
-                return calculadora.minus(operacion.x, operacion.y);
+                resultado = calculadora.minus(resultadoActual, valorEntrada);
+                break;
             case MULTIPLY:
-                return calculadora.multiply(operacion.x, operacion.y);
+                resultado = calculadora.multiply(resultadoActual, valorEntrada);
+                break;
             case DIV:
-                return calculadora.divide(operacion.x, operacion.y);
-            default:
-                return 0.0;
+                resultado = calculadora.divide(resultadoActual, valorEntrada);
+                break;
         }
+
+        resultadoActual = resultado;
+        entradaActual = String.valueOf(resultado);
+        operacionPendiente = null;
+        empezarNuevoNumero = true;
+        actualizarPantalla();
+    }
+
+    public void limpiarTodo() {
+        entradaActual = "0";
+        textoPantalla = "0";
+        textoHistorial = "";
+        resultadoActual = 0;
+        operacionPendiente = null;
+        empezarNuevoNumero = true;
+        actualizarPantalla();
+    }
+
+    private void actualizarPantalla() {
+        textoPantalla = entradaActual.replace(".0", "");
+        if (textoPantalla.equals("0")) textoPantalla = "0";
+    }
+
+    private void actualizarHistorial(String operacion) {
+        if (!textoHistorial.isEmpty()) {
+            textoHistorial += " " + simboloOperacion(operacionPendiente) + " " + entradaActual;
+        } else {
+            textoHistorial = operacion;
+        }
+    }
+
+    private String simboloOperacion(OperationType tipo) {
+        switch (tipo) {
+            case ADD: return "+";
+            case MINUS: return "−";
+            case MULTIPLY: return "×";
+            case DIV: return "÷";
+            default: return "";
+        }
+    }
+
+    public String obtenerTextoResultado() {
+        return textoPantalla;
+    }
+
+    public String obtenerTextoHistorial() {
+        return textoHistorial;
     }
 }
